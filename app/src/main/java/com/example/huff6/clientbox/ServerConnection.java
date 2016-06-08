@@ -7,6 +7,11 @@ import java.util.ArrayList;
  */
 public class ServerConnection {
 
+    ServerConnection () {
+        username = "";
+        number = "";
+    }
+
     private String username;
     private String number;
 
