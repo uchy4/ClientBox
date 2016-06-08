@@ -2,20 +2,19 @@ package com.example.huff6.clientbox;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.format.Time;
 
 public class ManualEntryActivity extends AppCompatActivity {
 
-    Time start;
-    Time stop;
+    String start;
+    String stop;
     String notes;
     Client client;
     boolean isValid;
     LocalConnection localConnection;
 
     ManualEntryActivity() {
-        start = new Time();
-        stop = new Time();
+        start = new String();
+        stop = new String();
         notes = "";
         isValid = false;
         localConnection = new LocalConnection();
@@ -35,7 +34,7 @@ public class ManualEntryActivity extends AppCompatActivity {
 
     }
 
-    public void update(Time startInput, Time stopInput) {
+    public void update(String startInput, String stopInput) {
         start = startInput;
         stop = stopInput;
     }

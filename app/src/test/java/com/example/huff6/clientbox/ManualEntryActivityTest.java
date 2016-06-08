@@ -1,8 +1,6 @@
 package com.example.huff6.clientbox;
 
 
-import android.text.format.Time;
-
 import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -24,8 +22,8 @@ public class ManualEntryActivityTest {
     public void updateTest() {
         // update(Time, Time) : void
 
-        Time temp1 = new Time();
-        Time temp2 = new Time();
+        String temp1 = "abc";
+        String temp2 = "def";
 
         ManualEntryActivity MEA = new ManualEntryActivity();
         MEA.update(temp1, temp2);

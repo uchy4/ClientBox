@@ -1,30 +1,29 @@
 package com.example.huff6.clientbox;
 
 
-import android.text.format.Time;
 
 /**
  * Created by joshu on 6/6/2016.
  */
 public class Log {
-    private Time startTime;
-    private Time stopTime;
+    private String startTime;
+    private String stopTime;
     private int duration;
     private String notes;
 
     Log () {
-        Time temp = null;
+        String temp = null;
         startTime = temp;
         stopTime = temp;
         duration = 0;
         notes = "";
     }
 
-    public Time getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public Time getStopTime() {
+    public String getStopTime() {
         return stopTime;
     }
 
@@ -36,11 +35,11 @@ public class Log {
         return notes;
     }
 
-    public void setStartTime(Time input) {
+    public void setStartTime(String input) {
         startTime = input;
     }
 
-    public void setStopTime(Time input) {
+    public void setStopTime(String input) {
         stopTime = input;
     }
 
