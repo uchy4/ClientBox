@@ -36,8 +36,6 @@ public class Log {
         return notes;
     }
 
-
-
     public void setStartTime(Time input) {
         startTime = input;
     }

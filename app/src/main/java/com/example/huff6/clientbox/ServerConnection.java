@@ -34,4 +34,8 @@ public class ServerConnection {
 
         return temp;
     }
+
+    public boolean haveInternetConnection(){
+        return true;
+    }
 }
