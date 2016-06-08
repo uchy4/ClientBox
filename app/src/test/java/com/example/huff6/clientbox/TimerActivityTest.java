@@ -1,4 +1,4 @@
-/**
+package com.example.huff6.clientbox; /**
  * Created by joshu on 6/8/2016.
  */
 
