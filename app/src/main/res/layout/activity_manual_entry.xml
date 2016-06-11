@@ -142,7 +142,8 @@
         android:layout_alignLeft="@+id/editText3"
         android:layout_alignStart="@+id/editText3"
         android:layout_alignRight="@+id/set_date2"
-        android:layout_alignEnd="@+id/set_date2" />
+        android:layout_alignEnd="@+id/set_date2"
+        android:onClick="goToClientLookup" />
 
     <Button
         android:layout_width="wrap_content"

@@ -1,5 +1,6 @@
 package com.example.huff6.clientbox;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.Calendar;
@@ -13,10 +14,12 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 
 public class ManualEntryActivity extends AppCompatActivity {
 
+    public static final String EXTRA_MESSAGE = "com.example.huff6.clientbox.MainActivity";
     String start;
     String stop;
     String notes;
@@ -24,14 +27,8 @@ public class ManualEntryActivity extends AppCompatActivity {
     boolean isValid;
     LocalConnection localConnection;
 
-    ManualEntryActivity() {
-        start = new String();
-        stop = new String();
-        notes = "";
-        isValid = false;
-        localConnection = new LocalConnection();
-    }
 
+//////////////////////////////////
         private static Button date, time;
         private static TextView set_date, set_time;
         private static final int Date_id = 0;
@@ -39,9 +36,15 @@ public class ManualEntryActivity extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
-
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_manual_entry);
+
+            Intent intent = getIntent();
+            //either recieve from the main of recieve from the timer
+            //we need to figure out how to switch between different intents
+            String message = intent.getStringExtra(MainActivity.MESSAGE3);
+
+
             date = (Button) findViewById(R.id.selectdate);
             time = (Button) findViewById(R.id.selecttime);
             set_date = (TextView) findViewById(R.id.set_date);
@@ -66,6 +69,24 @@ public class ManualEntryActivity extends AppCompatActivity {
             });
 
         }
+
+    public void onClickSubmitManualEntry() {
+        //submit info to database
+
+        //if added:
+        Toast.makeText(ManualEntryActivity.this, "submitted successfully", Toast.LENGTH_SHORT).show();
+
+        //go back to main page
+        try {
+            // move on to the main page
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra(EXTRA_MESSAGE, "");
+            startActivity(intent);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 
     protected Dialog onCreateDialog(int id) {
 
@@ -116,14 +137,9 @@ public class ManualEntryActivity extends AppCompatActivity {
         }
     };
 
+//////////////////////////////////
 
-    public void OnClickLookupClient() {
 
-    }
-
-    public void onClickSubmit() {
-
-    }
 
     public void update(String startInput, String stopInput) {
         start = startInput;

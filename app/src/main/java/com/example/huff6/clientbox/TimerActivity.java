@@ -1,5 +1,6 @@
  package com.example.huff6.clientbox;
 
+import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Chronometer;
 
  public class TimerActivity extends AppCompatActivity {
 
+     public static final String EXTRA_MESSAGE = "com.example.huff6.clientbox.ManualEntryActivity";
     Chronometer chronometer;
      Button startStop;
     long time = 0;
@@ -17,6 +19,9 @@ import android.widget.Chronometer;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.MESSAGE2);
 
         chronometer = (Chronometer) findViewById(R.id.chronometer);
         startStop = (Button) findViewById(R.id.btn_toggle_start_stop);
@@ -46,6 +51,18 @@ import android.widget.Chronometer;
 
      public void onClickReset(View v){
          chronometer.setBase(SystemClock.elapsedRealtime());
+     }
+
+     public void goToManualEntry(View v){
+         try {
+             // move on to the main page
+             Intent intent = new Intent(this, ManualEntryActivity.class);
+             intent.putExtra(EXTRA_MESSAGE, "");
+             startActivity(intent);
+         }
+         catch(Exception e){
+             System.out.println(e.getMessage());
+         }
      }
 
 }
