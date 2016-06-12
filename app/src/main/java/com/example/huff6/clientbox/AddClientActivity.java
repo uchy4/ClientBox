@@ -44,4 +44,8 @@ public class AddClientActivity extends AppCompatActivity {
             System.out.println(e.getMessage());
         }
     }
+
+    void addClient(){
+        //adds a client and then returns to main menu?
+    }
 }
