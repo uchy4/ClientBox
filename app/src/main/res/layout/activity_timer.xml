@@ -50,6 +50,6 @@
         android:layout_marginTop="59dp"
         android:layout_below="@+id/chronometer"
         android:layout_centerHorizontal="true"
-        android:onClick="goToManualEntry" />
+        android:onClick="fromTimerToManualEntry" />
 
 </RelativeLayout>

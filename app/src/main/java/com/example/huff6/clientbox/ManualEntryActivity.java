@@ -19,7 +19,8 @@ import android.widget.Toast;
 
 public class ManualEntryActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "com.example.huff6.clientbox.MainActivity";
+    public static final String MESSAGE1 = "com.example.huff6.clientbox.MainActivity";
+    public static final String MESSAGE2 = "com.example.huff6.clientbox.ClientLookupActivity";
     String start;
     String stop;
     String notes;
@@ -70,7 +71,7 @@ public class ManualEntryActivity extends AppCompatActivity {
 
         }
 
-    public void onClickSubmitManualEntry() {
+    public void onClickSubmitManualEntry(View v) {
         //submit info to database
 
         //if added:
@@ -80,7 +81,21 @@ public class ManualEntryActivity extends AppCompatActivity {
         try {
             // move on to the main page
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra(EXTRA_MESSAGE, "");
+            intent.putExtra(MESSAGE1, "");
+            startActivity(intent);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void onClickManualEntryToClientLookup(View v){
+
+        //go to client lookup
+        try {
+            // move on to the main page
+            Intent intent = new Intent(this, ClientLookupActivity.class);
+            intent.putExtra(MESSAGE2, "");
             startActivity(intent);
         }
         catch(Exception e){

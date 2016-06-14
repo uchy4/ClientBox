@@ -27,10 +27,6 @@ import android.widget.Chronometer;
         startStop = (Button) findViewById(R.id.btn_toggle_start_stop);
 
     }
-
-    void onClickManualEntry(){
-        time -= 30;//go to manual entry
-    }
     long getTime(){
         return time;
     }
@@ -53,7 +49,7 @@ import android.widget.Chronometer;
          chronometer.setBase(SystemClock.elapsedRealtime());
      }
 
-     public void goToManualEntry(View v){
+     public void fromTimerToManualEntry(View v){
          try {
              // move on to the main page
              Intent intent = new Intent(this, ManualEntryActivity.class);
