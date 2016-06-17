@@ -103,9 +103,14 @@ public class ManualEntryActivity extends AppCompatActivity {
         }
     }
 
+    public void setTime(View v){
+
+
+    }
+
     protected Dialog onCreateDialog(int id) {
 
-// Get the calander
+// Get the calendar
         Calendar c = Calendar.getInstance();
 
 // From calander get the year, month, day, hour, minute
