@@ -73,6 +73,7 @@ public class ManualEntryActivity extends AppCompatActivity {
 
     public void onClickSubmitManualEntry(View v) {
         //submit info to database
+        //push attempt
 
         //if added:
         Toast.makeText(ManualEntryActivity.this, "submitted successfully", Toast.LENGTH_SHORT).show();
